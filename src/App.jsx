@@ -568,7 +568,7 @@ export default function App() {
         </section>
 
         <footer className="max-w-6xl mx-auto px-6 py-10 text-center text-sm opacity-50">
-          © {year} Shaked Liloz · Software Developer
+          © {year} Shaked Liloz · Computer Science Student
         </footer>
 
         <Modal open={!!selected} project={selected} onClose={() => setSelected(null)} />
