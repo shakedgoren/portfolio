@@ -37,22 +37,23 @@ const projects = [
     name: "Jahnon On Wheels (Backend)",
     desc: "Django backend for managing orders and services.",
     tech: ["Python", "Django", "REST"],
-    highlights: ["REST API", "Models & relations", "Business logic"],
     url: "https://github.com/shakedgoren/jahnonOnWeels_back_django",
     type: "Personal",
     featured: true,
+    inProgress: true,
     caseStudy: {
-      problem: "Explore basic AI concepts.",
-      solution: "Built small Python experiments to understand AI-assisted logic.",
-      learnings: ["AI workflows", "Python experimentation"],
+      problem: "Restaurants need an efficient way to manage online food orders and inventory.",
+      solution: "Developed a Django REST backend to handle user orders, manage menu items, and process transactions.",
+      learnings: ["Django REST Framework", "Relational Database Design", "Business Logic Implementation"],
     },
   },
 ];
 
 const skillGroups = [
   { label: "Languages", items: ["Python", "Java", "JavaScript", "SQL"] },
+  { label: "AI & Data", items: ["Prompt Engineering", "Gen AI Integration", "Data Processing"] },
   { label: "Frameworks", items: ["React", "Redux", "Django", "Flask"] },
-  { label: "Tools & DevOps", items: ["Git", "Docker (basic)", "REST APIs", "HTML", "CSS"] },
+  { label: "Tools", items: ["Git", "Docker (basic)", "REST APIs", "Tailwind CSS"] },
 ];
 
 function cn(...classes) {
@@ -135,13 +136,28 @@ function ProjectCard({ p, onOpen }) {
                 className="inline-flex items-center gap-2 group/demo"
               >
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                <span className="text-[11px] font-bold uppercase tracking-widest text-black/50 dark:text-white/50 group-hover/demo:text-red-500 transition-colors">
+                <span className="text-[11px] font-bold uppercase tracking-widest text-black/50 dark:text-white/50 group-hover/demo:text-emerald-500 transition-colors">
                   Live Demo
                 </span>
               </a>
+            </div>
+          )}
+
+          {/* In Progress Badge (No link required) */}
+          {p.inProgress && !p.link && (
+            <div className="mt-auto pt-4 border-t border-black/5 dark:border-white/5">
+              <div className="inline-flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                </span>
+                <span className="text-[11px] font-bold uppercase tracking-widest text-amber-600 dark:text-amber-500">
+                  In Progress
+                </span>
+              </div>
             </div>
           )}
         </div>
@@ -394,31 +410,37 @@ export default function App() {
                     <div className="w-3 h-3 rounded-full bg-emerald-500/20" />
                   </div>
 
-                  <p className="text-xl leading-relaxed text-black/80 dark:text-zinc-200 font-normal">
-                    <span className="text-sky-500 font-mono font-bold mr-2">{'>'}</span>
-                    As a Computer Science student, I view programming languages as tools to solve real-world puzzles.
-                    I thrive on the logic behind the software, focusing on building systems that are not just functional,
-                    but <span className="text-white dark:text-white font-semibold">scalable and easy to maintain</span>.
-                    My goal is to bridge the gap between complex theory and practical, efficient development.
-                    <span className="inline-block w-2 h-5 ml-2 bg-sky-500 animate-[pulse_1s_infinite] vertical-middle"></span>
+                  <p className="text-xl leading-snug text-black/80 dark:text-zinc-200 font-normal space-y-3">
+                    <span className="block">
+                      <span className="text-sky-500 font-mono font-bold mr-2">{'>'}</span>
+                      I began my academic journey with a B.A. in Criminology, which sharpened my analytical thinking and deep curiosity for complex systems.
+                      Now, as a Computer Science student, I apply those problem-solving skills to code.
+                    </span>
+                    <span className="block mt-3">
+                      <span className="text-fuchsia-500 font-mono font-bold mr-2">{'>'}</span>
+                      I am highly passionate about <span className="text-fuchsia-500 dark:text-fuchsia-400 font-semibold">Cybersecurity</span> and software development,
+                      striving to build systems that are secure, scalable, and easy to maintain.
+                      My ultimate goal is to bridge complex theory with practical applications to create a meaningful, positive impact in the world.
+                      <span className="inline-block w-2 h-5 ml-2 bg-sky-500 animate-[pulse_1s_infinite] align-middle"></span>
+                    </span>
                   </p>
 
-                  <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-black/5 dark:border-white/10 pt-8">
+                  <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-black/5 dark:border-white/10 pt-6">
                     <div className="text-left group/item">
-                      <p className="text-2xl font-black text-sky-500 transition-transform group-hover/item:-translate-y-1">B.Sc.</p>
-                      <p className="text-xs uppercase tracking-widest text-zinc-500 font-bold">CS Student</p>
+                      <p className="text-2xl font-black text-sky-500 transition-transform group-hover/item:-translate-y-1">CS</p>
+                      <p className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Student</p>
                     </div>
                     <div className="text-left group/item">
-                      <p className="text-2xl font-black text-fuchsia-500 transition-transform group-hover/item:-translate-y-1">Agile</p>
-                      <p className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Fast Learner</p>
+                      <p className="text-2xl font-black text-fuchsia-500 transition-transform group-hover/item:-translate-y-1">B.A.</p>
+                      <p className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Criminology</p>
                     </div>
                     <div className="text-left group/item">
-                      <p className="text-2xl font-black text-emerald-500 transition-transform group-hover/item:-translate-y-1">Logic</p>
+                      <p className="text-2xl font-black text-emerald-500 transition-transform group-hover/item:-translate-y-1">Cyber</p>
+                      <p className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Enthusiast</p>
+                    </div>
+                    <div className="text-left group/item">
+                      <p className="text-2xl font-black text-amber-500 transition-transform group-hover/item:-translate-y-1">Impact</p>
                       <p className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Driven</p>
-                    </div>
-                    <div className="text-left group/item">
-                      <p className="text-2xl font-black text-amber-500 transition-transform group-hover/item:-translate-y-1">Clean</p>
-                      <p className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Code</p>
                     </div>
                   </div>
                 </div>
@@ -428,17 +450,38 @@ export default function App() {
         </section>
 
         {/* SKILLS SECTION */}
-        <section className="max-w-6xl mx-auto px-6 py-10 text-left" id="skills">
-          <h2 className="text-2xl font-extrabold tracking-tight">Technical Toolbox</h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            {skillGroups.map((group) => (
-              <Card key={group.label} className="flex flex-col gap-4">
-                <h3 className="text-xs font-black uppercase tracking-widest opacity-50">{group.label}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {group.items.map(skill => <Chip key={skill}>{skill}</Chip>)}
+        <section className="relative max-w-6xl mx-auto px-6 py-10 text-left" id="skills">
+          {/* Subtle background glow for skills section */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-sky-500/5 rounded-full blur-[100px] pointer-events-none" />
+
+          <div className="relative z-10">
+            <h2 className="text-3xl font-black tracking-tighter text-black dark:text-white mb-8">
+              Technical <span className="text-sky-500">Toolbox</span>
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {skillGroups.map((group, i) => (
+                <div key={group.label} className="group relative">
+                  {/* Card hover effect glow */}
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-sky-500/20 to-fuchsia-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
+
+                  <Card className="relative h-full flex flex-col gap-4 border-black/5 dark:border-white/10 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-xl hover:border-sky-500/30 transition-colors">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-xl opacity-80">
+                        {i === 0 ? "💻" : i === 1 ? "🤖" : i === 2 ? "⚙️" : "🛠️"}
+                      </span>
+                      <h3 className="text-xs font-black uppercase tracking-widest text-sky-500">{group.label}</h3>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {group.items.map(skill => (
+                        <span key={skill} className="px-3 py-1.5 rounded-xl text-xs font-bold bg-black/5 dark:bg-white/5 text-black/80 dark:text-white/80 border border-black/5 dark:border-white/5 group-hover:border-sky-500/20 transition-colors">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </Card>
                 </div>
-              </Card>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
@@ -461,7 +504,7 @@ export default function App() {
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-xl">
                 <h2 className="text-4xl font-black tracking-tighter mb-4">
-                  Ready to build <br />
+                  Ready to create <br />
                   <span className="text-sky-500">something great?</span>
                 </h2>
                 <p className="text-lg text-black/70 dark:text-zinc-400 font-medium">
@@ -527,7 +570,7 @@ export default function App() {
         </section>
 
         <footer className="max-w-6xl mx-auto px-6 py-10 text-center text-sm opacity-50">
-          © {year} Shaked Goren · Software Developer
+          © {year} Shaked Liloz · Software Developer
         </footer>
 
         <Modal open={!!selected} project={selected} onClose={() => setSelected(null)} />
