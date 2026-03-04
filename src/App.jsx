@@ -338,7 +338,7 @@ export default function App() {
             </div>
 
             <div className="lg:col-span-4 order-1 lg:order-2 mt-4 lg:mt-0 flex justify-center lg:justify-end">
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[420px] rounded-full p-2 bg-gradient-to-tr from-sky-500 via-fuchsia-500 to-emerald-400 animate-gradient-flow group">
+              <div className="relative w-64 sm:w-80 lg:w-full max-w-[420px] shrink-0 aspect-square rounded-full p-2 bg-gradient-to-tr from-sky-500 via-fuchsia-500 to-emerald-400 animate-gradient-flow group">
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-sky-500 via-fuchsia-500 to-emerald-400 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
 
