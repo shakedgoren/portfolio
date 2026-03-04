@@ -341,7 +341,8 @@ export default function App() {
               </h1>
               <p className="mt-8 max-w-2xl text-lg sm:text-xl leading-relaxed text-black/70 dark:text-zinc-400">
                 I'm <span className="text-black dark:text-white font-semibold">Shaked Liloz</span>.
-                I specialize in solving complex problems through clean code and strong algorithmic foundations.
+                My goal is not only to develop technical expertise, but to use it to make a lasting, positive impact.
+
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <a href="#projects" className="rounded-2xl px-8 py-4 text-sm font-bold bg-black text-white dark:bg-white dark:text-black hover:scale-105 transition-all shadow-lg">
@@ -391,7 +392,7 @@ export default function App() {
                 <ul className="space-y-4 text-sm text-black/70 dark:text-zinc-300">
                   <li className="flex gap-3"><span className="text-sky-500">▹</span><span>CS fundamentals & Algorithms</span></li>
                   <li className="flex gap-3"><span className="text-fuchsia-500">▹</span><span>Python, Java, React & Django proficiency</span></li>
-                  <li className="flex gap-3"><span className="text-emerald-500">▹</span><span>Rapid tech stack adaptation</span></li>
+                  <li className="flex gap-3"><span className="text-emerald-500">▹</span><span>Learning agility with strong self-learning capabilities</span></li>
                   <li className="flex gap-3"><span className="text-amber-500">▹</span><span>Analytical problem-solving</span></li>
                 </ul>
               </div>
@@ -413,14 +414,11 @@ export default function App() {
                   <p className="text-xl leading-snug text-black/80 dark:text-zinc-200 font-normal space-y-2">
                     <span className="block">
                       <span className="text-sky-500 font-mono font-bold mr-2">{'>'}</span>
-                      I began my academic journey with a B.A. in Criminology, which sharpened my analytical thinking and deep curiosity for complex systems.
-                      Now, as a Computer Science student, I apply those problem-solving skills to coding.
+                      I hold a<span className="text-sky-500 font-semibold"> B.A. in Criminology</span>, where I developed strong analytical thinking and a deep curiosity for complex systems. Today, as a Computer Science student, I apply that mindset to technology using code as a tool for meaningful impact.
                     </span>
                     <span className="block mt-2">
                       <span className="text-fuchsia-500 font-mono font-bold mr-2">{'>'}</span>
-                      I am highly passionate about <span className="text-fuchsia-500 dark:text-fuchsia-400 font-semibold">Cybersecurity</span> and software development,
-                      striving to build systems that are secure, scalable, and easy to maintain.
-                      My ultimate goal is to bridge complex theory with practical applications to create a meaningful, positive impact in the world.
+                      I am especially interested in <span className="text-fuchsia-500 dark:text-fuchsia-400 font-semibold">Cybersecurity</span> and software development, with a strong drive to build secure and impactful systems. At the same time, I remain open to diverse opportunities where I can grow, contribute, and create meaningful value.
                       <span className="inline-block w-2 h-5 ml-2 bg-sky-500 animate-[pulse_1s_infinite] align-middle"></span>
                     </span>
                   </p>
@@ -508,7 +506,7 @@ export default function App() {
                   <span className="text-sky-500">something great?</span>
                 </h2>
                 <p className="text-lg text-black/70 dark:text-zinc-400 font-medium">
-                  I am always looking for new opportunities and challenging projects. <br />
+                  I specialize in solving complex problems through clean code and strong algorithmic foundations. <br />
                   Available for a chat on WhatsApp, phone or email.
                 </p>
               </div>
