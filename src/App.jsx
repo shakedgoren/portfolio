@@ -338,7 +338,7 @@ export default function App() {
             </div>
 
             <div className="lg:col-span-4 order-1 lg:order-2 mt-4 lg:mt-0 flex justify-center lg:justify-end">
-              <div className="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full p-2 bg-gradient-to-tr from-sky-500 via-fuchsia-500 to-emerald-400 animate-gradient-flow group">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[420px] rounded-full p-2 bg-gradient-to-tr from-sky-500 via-fuchsia-500 to-emerald-400 animate-gradient-flow group">
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-sky-500 via-fuchsia-500 to-emerald-400 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -354,10 +354,22 @@ export default function App() {
           </div>
         </section>
 
-        {/* SIDE SECTION - What I bring (Moved out of hero grid to below it) */}
-        <section className="max-w-6xl mx-auto px-6 pb-10 text-left">
-          <div className="flex justify-start">
-            <div className="w-full lg:w-1/3">
+        {/* ABOUT SECTION */}
+        <section className="max-w-6xl mx-auto px-6 py-20 text-left" id="about">
+          {/* Section Header */}
+          <div className="mb-12">
+            <h2 className="text-3xl font-black tracking-tighter text-black dark:text-white leading-tight">
+              The Mindset <br />
+              <span className="text-sky-500 relative">
+                Behind the Code
+                <span className="absolute -bottom-1 left-0 max-w-[max-content] w-full h-1 bg-sky-500/20 rounded-full"></span>
+              </span>
+            </h2>
+          </div>
+
+          <div className="grid gap-12 lg:grid-cols-12 items-start text-left">
+            {/* Left Column: What I bring */}
+            <div className="lg:col-span-4">
               <div className="rounded-3xl p-6 border border-black/10 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-md">
                 <h3 className="text-xs font-black uppercase tracking-widest text-sky-500 mb-4">What I bring</h3>
                 <ul className="space-y-4 text-sm text-black/70 dark:text-zinc-300">
@@ -367,21 +379,6 @@ export default function App() {
                   <li className="flex gap-3"><span className="text-amber-500">▹</span><span>Analytical problem-solving</span></li>
                 </ul>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ABOUT SECTION */}
-        <section className="max-w-6xl mx-auto px-6 py-20 text-left" id="about">
-          <div className="grid gap-12 lg:grid-cols-12 items-start text-left">
-            <div className="lg:col-span-4">
-              <h2 className="text-3xl font-black tracking-tighter text-black dark:text-white leading-tight">
-                The Mindset <br />
-                <span className="text-sky-500 relative">
-                  Behind the Code
-                  <span className="absolute -bottom-1 left-0 w-full h-1 bg-sky-500/20 rounded-full"></span>
-                </span>
-              </h2>
             </div>
 
             <div className="lg:col-span-8 group relative">
