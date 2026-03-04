@@ -34,9 +34,9 @@ const projects = [
     },
   },
   {
-    name: "Jahnon On Wheels (Backend)",
-    desc: "Django backend for managing orders and services.",
-    tech: ["Python", "Django", "REST"],
+    name: "Jahnon On Wheels",
+    desc: "Full-stack web application for managing food orders and services.",
+    tech: ["React", "Python", "Django", "REST API"],
     url: "https://github.com/shakedgoren/jahnonOnWeels_back_django",
     type: "Personal",
     featured: true,
@@ -336,11 +336,11 @@ export default function App() {
               <h1 className="mt-4 text-5xl sm:text-7xl font-black tracking-tighter leading-[1.1] text-black dark:text-white">
                 Focused on <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-fuchsia-500 to-emerald-400 animate-gradient-flow">
-                  software development & core logic.
+                  software development & core logic
                 </span> <br />
               </h1>
               <p className="mt-8 max-w-2xl text-lg sm:text-xl leading-relaxed text-black/70 dark:text-zinc-400">
-                I'm <span className="text-black dark:text-white font-semibold">Shaked Goren</span>.
+                I'm <span className="text-black dark:text-white font-semibold">Shaked Liloz</span>.
                 I specialize in solving complex problems through clean code and strong algorithmic foundations.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
@@ -410,13 +410,13 @@ export default function App() {
                     <div className="w-3 h-3 rounded-full bg-emerald-500/20" />
                   </div>
 
-                  <p className="text-xl leading-snug text-black/80 dark:text-zinc-200 font-normal space-y-3">
+                  <p className="text-xl leading-snug text-black/80 dark:text-zinc-200 font-normal space-y-2">
                     <span className="block">
                       <span className="text-sky-500 font-mono font-bold mr-2">{'>'}</span>
                       I began my academic journey with a B.A. in Criminology, which sharpened my analytical thinking and deep curiosity for complex systems.
-                      Now, as a Computer Science student, I apply those problem-solving skills to code.
+                      Now, as a Computer Science student, I apply those problem-solving skills to coding.
                     </span>
-                    <span className="block mt-3">
+                    <span className="block mt-2">
                       <span className="text-fuchsia-500 font-mono font-bold mr-2">{'>'}</span>
                       I am highly passionate about <span className="text-fuchsia-500 dark:text-fuchsia-400 font-semibold">Cybersecurity</span> and software development,
                       striving to build systems that are secure, scalable, and easy to maintain.
@@ -435,12 +435,12 @@ export default function App() {
                       <p className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Criminology</p>
                     </div>
                     <div className="text-left group/item">
-                      <p className="text-2xl font-black text-emerald-500 transition-transform group-hover/item:-translate-y-1">Cyber</p>
-                      <p className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Enthusiast</p>
+                      <p className="text-2xl font-black text-emerald-500 transition-transform group-hover/item:-translate-y-1">Security</p>
+                      <p className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Focus</p>
                     </div>
                     <div className="text-left group/item">
-                      <p className="text-2xl font-black text-amber-500 transition-transform group-hover/item:-translate-y-1">Impact</p>
-                      <p className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Driven</p>
+                      <p className="text-2xl font-black text-amber-500 transition-transform group-hover/item:-translate-y-1">Problem</p>
+                      <p className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Solver</p>
                     </div>
                   </div>
                 </div>
