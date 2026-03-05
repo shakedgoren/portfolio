@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, useRef } from "react";
+import { useEffect, useMemo, useState, useRef, useCallback } from "react";
 import PacmanBackground from "./components/PacmanBackground";
 
 const projects = [
@@ -12,6 +12,7 @@ const projects = [
     githubBack: "https://github.com/shakedgoren/library-backend-final",
     type: "Academic",
     featured: true,
+    loginCredentials: { username: "shaked_admin", password: "12345678" },
     caseStudy: {
       problem: "Manage books and users with clear UI and consistent state.",
       solution: "Built a React app with Redux slices, reusable components and CRUD flows.",
@@ -88,6 +89,21 @@ function Card({ children, className }) {
 }
 
 function ProjectCard({ p, onOpen }) {
+  const [showLoginPopup, setShowLoginPopup] = useState(false);
+  const popupRef = useRef(null);
+
+  // סגירת הפופאפ בלחיצה מחוץ אליו
+  useEffect(() => {
+    if (!showLoginPopup) return;
+    const handleClickOutside = (e) => {
+      if (popupRef.current && !popupRef.current.contains(e.target)) {
+        setShowLoginPopup(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [showLoginPopup]);
+
   return (
     <div className="text-left w-full group outline-none perspective-1000">
       <Card className="relative overflow-hidden h-full border border-black/5 dark:border-white/10 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md transition-all duration-500 group-hover:-translate-y-2 group-hover:border-sky-500/50 group-hover:shadow-[0_20px_40px_rgba(14,165,233,0.15)]">
@@ -128,21 +144,49 @@ function ProjectCard({ p, onOpen }) {
           {/* כפתור Demo בתחתית עם אור מהבהב */}
           {p.link && (
             <div className="mt-auto pt-4 border-t border-black/5 dark:border-white/5">
-              <a
-                href={p.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center gap-2 group/demo"
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span className="text-[11px] font-bold uppercase tracking-widest text-black/50 dark:text-white/50 group-hover/demo:text-emerald-500 transition-colors">
-                  Live Demo
-                </span>
-              </a>
+              <div className="relative inline-block" ref={popupRef}>
+                {/* פופאפ פרטי כניסה */}
+                {showLoginPopup && p.loginCredentials && (
+                  <div className="absolute bottom-full mb-3 left-0 z-50 w-64 rounded-2xl border border-sky-500/30 bg-white dark:bg-zinc-900 shadow-2xl p-4 animate-[fadeIn_0.2s_ease]">
+                    {/* חץ קטן */}
+                    <div className="absolute -bottom-2 left-4 w-4 h-4 rotate-45 bg-white dark:bg-zinc-900 border-r border-b border-sky-500/30" />
+                    <p className="text-[10px] font-black uppercase tracking-widest text-sky-500 mb-3">🔑 Login Credentials</p>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between items-center bg-black/5 dark:bg-white/5 rounded-xl px-3 py-2">
+                        <span className="text-black/50 dark:text-white/50 text-xs font-bold">Username</span>
+                        <span className="font-mono font-bold text-black dark:text-white text-xs">{p.loginCredentials.username}</span>
+                      </div>
+                      <div className="flex justify-between items-center bg-black/5 dark:bg-white/5 rounded-xl px-3 py-2">
+                        <span className="text-black/50 dark:text-white/50 text-xs font-bold">Password</span>
+                        <span className="font-mono font-bold text-black dark:text-white text-xs">{p.loginCredentials.password}</span>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-[10px] text-black/40 dark:text-white/40 leading-relaxed">
+                      Login credentials can also be found in the project details
+                    </p>
+                  </div>
+                )}
+
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (p.loginCredentials) {
+                      setShowLoginPopup((v) => !v);
+                    } else {
+                      window.open(p.link, "_blank", "noopener,noreferrer");
+                    }
+                  }}
+                  className="inline-flex items-center gap-2 group/demo"
+                >
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-black/50 dark:text-white/50 group-hover/demo:text-emerald-500 transition-colors">
+                    Live Demo
+                  </span>
+                </button>
+              </div>
             </div>
           )}
 
@@ -214,6 +258,23 @@ function Modal({ open, onClose, project }) {
                   </ul>
                 </div>
               )}
+            </div>
+          )}
+
+          {/* Login Credentials (if exists) */}
+          {project.loginCredentials && (
+            <div className="mt-6 rounded-2xl border border-sky-500/30 bg-sky-500/5 p-4">
+              <p className="text-[10px] font-black uppercase tracking-widest text-sky-500 mb-3">🔑 Login Credentials</p>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center bg-black/5 dark:bg-white/5 rounded-xl px-3 py-2">
+                  <span className="text-black/50 dark:text-white/50 text-xs font-bold">Username</span>
+                  <span className="font-mono font-bold text-black dark:text-white text-sm">{project.loginCredentials.username}</span>
+                </div>
+                <div className="flex justify-between items-center bg-black/5 dark:bg-white/5 rounded-xl px-3 py-2">
+                  <span className="text-black/50 dark:text-white/50 text-xs font-bold">Password</span>
+                  <span className="font-mono font-bold text-black dark:text-white text-sm">{project.loginCredentials.password}</span>
+                </div>
+              </div>
             </div>
           )}
 
