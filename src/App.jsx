@@ -164,6 +164,15 @@ function ProjectCard({ p, onOpen }) {
                     <p className="mt-3 text-[10px] text-black/40 dark:text-white/40 leading-relaxed">
                       Login credentials can also be found in the project details
                     </p>
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="mt-3 flex items-center justify-center gap-2 w-full rounded-xl px-3 py-2 text-xs font-bold bg-sky-500 text-white hover:bg-sky-400 transition-colors"
+                    >
+                      Go to Site →
+                    </a>
                   </div>
                 )}
 
@@ -172,7 +181,6 @@ function ProjectCard({ p, onOpen }) {
                     e.stopPropagation();
                     if (p.loginCredentials) {
                       setShowLoginPopup((v) => !v);
-                      window.open(p.link, "_blank", "noopener,noreferrer");
                     } else {
                       window.open(p.link, "_blank", "noopener,noreferrer");
                     }
