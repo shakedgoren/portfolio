@@ -172,6 +172,7 @@ function ProjectCard({ p, onOpen }) {
                     e.stopPropagation();
                     if (p.loginCredentials) {
                       setShowLoginPopup((v) => !v);
+                      window.open(p.link, "_blank", "noopener,noreferrer");
                     } else {
                       window.open(p.link, "_blank", "noopener,noreferrer");
                     }
