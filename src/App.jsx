@@ -257,8 +257,8 @@ function Modal({ open, onClose, project }) {
       {/* Overlay */}
       <button onClick={onClose} className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
 
-      <div className="relative mx-auto mt-16 w-[92%] max-w-2xl">
-        <div className="rounded-3xl border border-black/10 dark:border-white/10 bg-white/90 dark:bg-[#0b0b12]/90 backdrop-blur shadow-2xl p-7">
+      <div className="relative mx-auto mt-16 w-[92%] max-w-2xl mb-8">
+        <div className="rounded-3xl border border-black/10 dark:border-white/10 bg-white/90 dark:bg-[#0b0b12]/90 backdrop-blur shadow-2xl p-7 max-h-[85vh] overflow-y-auto scrollbar-thin scrollbar-thumb-sky-500/50 scrollbar-track-transparent">
 
           {/* Header */}
           <div className="flex items-start justify-between gap-4">
