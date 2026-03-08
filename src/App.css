@@ -1,8 +1,10 @@
 #root {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -42,7 +44,7 @@
 }
 
 .animate-gradient-x {
-  background-size: 200% auto; /* 🟢 חשוב: הופך את ה-Gradient לגדול יותר כדי שיוכל לזוז */
+  background-size: 100% auto; /* 🟢 חשוב: הופך את ה-Gradient לגדול יותר כדי שיוכל לזוז */
   animation: gradient-x 8s linear infinite; /* 🟢 8s = מהירות התזוזה (איטי = 8 שניות) */
 }
 @keyframes gradient-move {
