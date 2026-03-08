@@ -44,7 +44,7 @@
 }
 
 .animate-gradient-x {
-  background-size: 100% auto; /* 🟢 חשוב: הופך את ה-Gradient לגדול יותר כדי שיוכל לזוז */
+  background-size: 200% auto; /* 🟢 חשוב: הופך את ה-Gradient לגדול יותר כדי שיוכל לזוז */
   animation: gradient-x 8s linear infinite; /* 🟢 8s = מהירות התזוזה (איטי = 8 שניות) */
 }
 @keyframes gradient-move {
