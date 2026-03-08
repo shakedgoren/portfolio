@@ -36,16 +36,24 @@ const projects = [
   },
   {
     name: "Jahnon On Wheels",
-    desc: "Full-stack web application for managing food orders and services.",
-    tech: ["React", "Python", "Django", "REST API"],
-    url: "https://github.com/shakedgoren/jahnonOnWeels_back_django",
-    type: "Personal",
+    subtitle: "Business Management System",
+    desc: "A custom Full-stack solution for a real-world food delivery and logistics operation.",
+    tech: ["React", "Python", "Django", "REST API", "SSE"],
+    link: "https://jahnononweels.netlify.app/",
+    githubBack: "https://github.com/shakedgoren/jahnonOnWeels_back_django",
+    type: "Business",
     featured: true,
-    inProgress: true,
+    restricted: true,
     caseStudy: {
-      problem: "Restaurants need an efficient way to manage online food orders and inventory.",
-      solution: "Developed a Django REST backend to handle user orders, manage menu items, and process transactions.",
-      learnings: ["Django REST Framework", "Relational Database Design", "Business Logic Implementation"],
+      problem: "Managing peak-hour surges with simultaneous orders from different points of sale, synchronized inventory tracking, and complex delivery scheduling without data loss or duplication.",
+      solution: "Developed a robust management platform for 'Jahnon On Wheels,' an active food business. The system handles high-volume Saturday morning orders across multiple locations, synchronizing inventory and logistics in real-time.",
+      technicalSolutions: [
+        { title: "Real-time Inventory Sync", desc: "Implemented Server-Sent Events (SSE) for instant stock updates across all devices." },
+        { title: "Intelligent Logistics", desc: "Custom scheduling for 10-minute delivery slots and a race-condition prevention layer for walk-in orders." },
+        { title: "Data Integrity", desc: "Utilized Django Atomic Transactions for consistent and safe financial/inventory changes." },
+        { title: "Premium Mobile UX", desc: "A high-end, responsive Glassmorphism interface optimized for field operations with full overscroll protection." }
+      ],
+      notice: "Because this is a live application used by a real business containing actual customer data, access is restricted. Please refer to the screen recording demonstrating the full operational flow and real-time synchronization."
     },
   },
 ];
@@ -128,7 +136,7 @@ function ProjectCard({ p, onOpen }) {
             </div>
 
             <p className="text-sm text-black/60 dark:text-white/60 line-clamp-2 mb-6 font-medium leading-relaxed">
-              {p.desc}
+              {p.subtitle || p.desc}
             </p>
           </div>
 
@@ -199,6 +207,21 @@ function ProjectCard({ p, onOpen }) {
             </div>
           )}
 
+          {/* Restricted Access Badge */}
+          {p.restricted && (
+            <div className="mt-auto pt-4 border-t border-black/5 dark:border-white/5">
+              <div className="inline-flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                </span>
+                <span className="text-[11px] font-bold uppercase tracking-widest text-red-600 dark:text-red-500">
+                  Restricted Access
+                </span>
+              </div>
+            </div>
+          )}
+
           {/* In Progress Badge (No link required) */}
           {p.inProgress && !p.link && (
             <div className="mt-auto pt-4 border-t border-black/5 dark:border-white/5">
@@ -246,6 +269,20 @@ function Modal({ open, onClose, project }) {
             <button onClick={onClose} className="rounded-xl px-3 py-2 text-sm font-bold border border-black/10 dark:border-white/10 hover:scale-[1.03] transition">✕</button>
           </div>
 
+          {/* Video Demo (if exists) */}
+          {project.video && (
+            <div className="mt-6 overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-black/5">
+              <video
+                src={project.video}
+                controls
+                className="w-full aspect-video outline-none"
+                poster={project.image}
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          )}
+
           {/* Case Study Content */}
           {project.caseStudy && (
             <div className="mt-6 space-y-5 text-left">
@@ -257,6 +294,22 @@ function Modal({ open, onClose, project }) {
                 <p className="text-xs font-extrabold uppercase tracking-wider opacity-70">Solution</p>
                 <p className="mt-2 text-sm text-black/70 dark:text-white/70 leading-relaxed">{project.caseStudy.solution}</p>
               </div>
+
+              {/* Technical Solutions */}
+              {project.caseStudy.technicalSolutions?.length > 0 && (
+                <div>
+                  <p className="text-xs font-extrabold uppercase tracking-wider opacity-70">Technical Solutions</p>
+                  <div className="mt-3 space-y-3">
+                    {project.caseStudy.technicalSolutions.map((sol) => (
+                      <div key={sol.title} className="p-3 rounded-xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                        <p className="text-xs font-bold text-sky-500">{sol.title}</p>
+                        <p className="mt-1 text-xs text-black/60 dark:text-white/60 leading-relaxed">{sol.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {project.caseStudy.learnings?.length > 0 && (
                 <div>
                   <p className="text-xs font-extrabold uppercase tracking-wider opacity-70">Learnings</p>
@@ -265,6 +318,14 @@ function Modal({ open, onClose, project }) {
                       <li key={l} className="flex gap-2"><span className="text-emerald-500">▸</span><span>{l}</span></li>
                     ))}
                   </ul>
+                </div>
+              )}
+
+              {/* Notice to Visitors */}
+              {project.caseStudy.notice && (
+                <div className="mt-6 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-600 dark:text-amber-400 leading-relaxed">
+                  <p className="font-bold uppercase tracking-widest mb-1">⚠️ Notice to Visitors</p>
+                  {project.caseStudy.notice}
                 </div>
               )}
             </div>
