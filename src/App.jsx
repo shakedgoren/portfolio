@@ -11,7 +11,7 @@ const projects = [
     type: "Business",
     featured: true,
     restricted: true,
-    hasVideo: true, // Flag to show video placeholder
+    video: "/videos/livedemo.mov",
     caseStudy: {
       problem: "Managing peak-hour surges with simultaneous orders from different points of sale, synchronized inventory tracking, and complex delivery scheduling without data loss or duplication.",
       solution: "Developed a robust management platform for 'Jahnon On Wheels,' an active food business. The system handles high-volume Saturday morning orders across multiple locations, synchronizing inventory and logistics in real-time.",
