@@ -3,20 +3,25 @@ import PacmanBackground from "./components/PacmanBackground";
 
 const projects = [
   {
-    name: "Library Front Redux",
-    desc: "Frontend library management system using Redux for state management.",
-    tech: ["React", "Redux", "JavaScript"],
-    highlights: ["Global state", "CRUD flows", "Reusable components"],
-    link: "https://library-frontend-final.netlify.app/",
-    githubFront: "https://github.com/shakedgoren/Library_front_redux",
-    githubBack: "https://github.com/shakedgoren/library-backend-final",
-    type: "Academic",
+    name: "Jahnon On Wheels",
+    subtitle: "Business Management System",
+    desc: "A custom Full-stack solution for a real-world food delivery and logistics operation.",
+    tech: ["React", "Python", "Django", "REST API", "SSE"],
+    link: "https://jahnononweels.netlify.app/",
+    type: "Business",
     featured: true,
-    loginCredentials: { username: "shaked_admin", password: "12345678" },
+    restricted: true,
+    hasVideo: true, // Flag to show video placeholder
     caseStudy: {
-      problem: "Manage books and users with clear UI and consistent state.",
-      solution: "Built a React app with Redux slices, reusable components and CRUD flows.",
-      learnings: ["Redux patterns", "Component reuse", "UI state consistency"],
+      problem: "Managing peak-hour surges with simultaneous orders from different points of sale, synchronized inventory tracking, and complex delivery scheduling without data loss or duplication.",
+      solution: "Developed a robust management platform for 'Jahnon On Wheels,' an active food business. The system handles high-volume Saturday morning orders across multiple locations, synchronizing inventory and logistics in real-time.",
+      technicalSolutions: [
+        { title: "Real-time Inventory Sync", desc: "Implemented Server-Sent Events (SSE) for instant stock updates across all devices." },
+        { title: "Intelligent Logistics", desc: "Custom scheduling for 10-minute delivery slots and a race-condition prevention layer for walk-in orders." },
+        { title: "Data Integrity", desc: "Utilized Django Atomic Transactions for consistent and safe financial/inventory changes." },
+        { title: "Premium Mobile UX", desc: "A high-end, responsive Glassmorphism interface optimized for field operations with full overscroll protection." }
+      ],
+      notice: "Because this is a live application used by a real business containing actual customer data, access is restricted. Please refer to the screen recording demonstrating the full operational flow and real-time synchronization."
     },
   },
   {
@@ -35,25 +40,20 @@ const projects = [
     },
   },
   {
-    name: "Jahnon On Wheels",
-    subtitle: "Business Management System",
-    desc: "A custom Full-stack solution for a real-world food delivery and logistics operation.",
-    tech: ["React", "Python", "Django", "REST API", "SSE"],
-    link: "https://jahnononweels.netlify.app/",
-    githubBack: "https://github.com/shakedgoren/jahnonOnWeels_back_django",
-    type: "Business",
+    name: "Library Front Redux",
+    desc: "Frontend library management system using Redux for state management.",
+    tech: ["React", "Redux", "JavaScript"],
+    highlights: ["Global state", "CRUD flows", "Reusable components"],
+    link: "https://library-frontend-final.netlify.app/",
+    githubFront: "https://github.com/shakedgoren/Library_front_redux",
+    githubBack: "https://github.com/shakedgoren/library-backend-final",
+    type: "Academic",
     featured: true,
-    restricted: true,
+    loginCredentials: { username: "shaked_admin", password: "12345678" },
     caseStudy: {
-      problem: "Managing peak-hour surges with simultaneous orders from different points of sale, synchronized inventory tracking, and complex delivery scheduling without data loss or duplication.",
-      solution: "Developed a robust management platform for 'Jahnon On Wheels,' an active food business. The system handles high-volume Saturday morning orders across multiple locations, synchronizing inventory and logistics in real-time.",
-      technicalSolutions: [
-        { title: "Real-time Inventory Sync", desc: "Implemented Server-Sent Events (SSE) for instant stock updates across all devices." },
-        { title: "Intelligent Logistics", desc: "Custom scheduling for 10-minute delivery slots and a race-condition prevention layer for walk-in orders." },
-        { title: "Data Integrity", desc: "Utilized Django Atomic Transactions for consistent and safe financial/inventory changes." },
-        { title: "Premium Mobile UX", desc: "A high-end, responsive Glassmorphism interface optimized for field operations with full overscroll protection." }
-      ],
-      notice: "Because this is a live application used by a real business containing actual customer data, access is restricted. Please refer to the screen recording demonstrating the full operational flow and real-time synchronization."
+      problem: "Manage books and users with clear UI and consistent state.",
+      solution: "Built a React app with Redux slices, reusable components and CRUD flows.",
+      learnings: ["Redux patterns", "Component reuse", "UI state consistency"],
     },
   },
 ];
@@ -200,7 +200,7 @@ function ProjectCard({ p, onOpen }) {
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                   </span>
                   <span className="text-[11px] font-bold uppercase tracking-widest text-black/50 dark:text-white/50 group-hover/demo:text-emerald-500 transition-colors">
-                    Live Demo
+                    {p.name === "Jahnon On Wheels" ? "Visit Website" : "Live Demo"}
                   </span>
                 </button>
               </div>
@@ -280,6 +280,23 @@ function Modal({ open, onClose, project }) {
               >
                 Your browser does not support the video tag.
               </video>
+            </div>
+          )}
+
+          {/* Video Placeholder Content */}
+          {project.hasVideo && (
+            <div className="mt-6">
+              <p className="text-[10px] font-black uppercase tracking-widest opacity-50 text-left mb-2">System Demonstration</p>
+              <div className="w-full aspect-video rounded-2xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 flex flex-col items-center justify-center overflow-hidden relative group cursor-pointer">
+                {/* Visual pulse effect for the placeholder */}
+                <div className="absolute inset-0 bg-sky-500/5 group-hover:bg-sky-500/10 transition-colors duration-500" />
+                <div className="relative z-10 flex flex-col items-center gap-3">
+                  <div className="w-16 h-16 rounded-full bg-white dark:bg-black/50 border border-black/10 dark:border-white/10 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-sky-500/20 transition-all duration-300">
+                    <span className="text-2xl opacity-60 ml-1">▶</span>
+                  </div>
+                  <p className="text-sm font-bold opacity-70">Screen recording coming soon...</p>
+                </div>
+              </div>
             </div>
           )}
 
