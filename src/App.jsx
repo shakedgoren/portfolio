@@ -381,6 +381,18 @@ function Modal({ open, onClose, project }) {
             </p>
 
             <div className="flex flex-wrap gap-3">
+              {/* Website Link */}
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 rounded-2xl px-5 py-3 text-sm font-bold bg-sky-500 text-white hover:bg-sky-400 hover:scale-[1.02] transition shadow-lg shadow-sky-500/20"
+                >
+                  <span>🌐</span> Visit Website
+                </a>
+              )}
+
               {/* Frontend Link */}
               {project.githubFront && (
                 <a
