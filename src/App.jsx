@@ -4,26 +4,26 @@ import PacmanBackground from "./components/PacmanBackground";
 const projects = [
   {
     name: "Jahnon On Wheels",
-    subtitle: "Business Management System",
-    desc: "A custom Full-stack solution for a real-world food delivery and logistics operation.",
-    tech: ["React", "Python", "Django", "REST API", "SSE"],
+    subtitle: "End-to-End E-Commerce & Management Platform",
+    desc: "A complete Full-Stack solution for a high-volume food business, featuring a customer-facing PWA and a real-time administrative dashboard.",
+    tech: ["React", "Vite", "PWA", "Python", "Django REST", "Google API"],
     link: "https://jahnononweels.netlify.app/",
-    type: "Business",
+    type: "Business & E-Commerce",
     featured: true,
     restricted: true,
     video: "/videos/livedemo.mov",
     caseStudy: {
-      problem: "Managing peak-hour surges with simultaneous orders from different points of sale, synchronized inventory tracking, and complex delivery scheduling without data loss or duplication.",
-      solution: "Developed a robust management platform for 'Jahnon On Wheels,' an active food business. The system handles high-volume Saturday morning orders across multiple locations, synchronizing inventory and logistics in real-time.",
+      problem: "The business needed to transition from manual WhatsApp messaging to an automated, self-serve ordering system while managing real-time inventory across multiple locations during peak Saturday hours.",
+      solution: "Engineered a Progressive Web App (PWA) with dual interfaces: A seamless customer portal for self-pickup orders with Google Authentication, and a strict role-based management dashboard for real-time inventory and order processing.",
       technicalSolutions: [
-        { title: "Real-time Inventory Sync", desc: "Implemented Server-Sent Events (SSE) for instant stock updates across all devices." },
-        { title: "Intelligent Logistics", desc: "Custom scheduling for 10-minute delivery slots and a race-condition prevention layer for walk-in orders." },
-        { title: "Data Integrity", desc: "Utilized Django Atomic Transactions for consistent and safe financial/inventory changes." },
-        { title: "Premium Mobile UX", desc: "A high-end, responsive Glassmorphism interface optimized for field operations with full overscroll protection." }
+        { title: "Customer-Facing PWA", desc: "Built an installable Progressive Web App featuring Google Login, dynamic live Google Reviews integration, and automated WhatsApp order confirmations." },
+        { title: "Operations Dashboard", desc: "Developed a secure, role-based internal system (Manager/Employee) to track simultaneous orders, manage shifts, and update cross-location inventory instantly." },
+        { title: "Intelligent Logistics", desc: "Implemented custom scheduling for specific delivery windows, location-based inventory tracking (e.g., Yavne/Ayyanot), and race-condition prevention for walk-in vs. online orders." },
+        { title: "Premium UI/UX", desc: "Designed a responsive, modern glassmorphism interface with smooth micro-interactions, optimized for both desktop management and mobile field operations." }
       ],
-      notice: "Because this is a live application used by a real business containing actual customer data, access is restricted. Please refer to the screen recording demonstrating the full operational flow and real-time synchronization."
-    },
-  },
+      notice: "Because this is a live application used by an active business containing confidential customer data, access to the admin dashboard is restricted. Please refer to the screen recording demonstrating the full operational flow."
+    }
+},
   {
     name: "Future Prophet AI",
     desc: "A modernized AI-powered web app generating personalized and sophisticated predictions based on user data.",
