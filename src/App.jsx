@@ -6,7 +6,7 @@ const projects = [
     name: "Jahnon On Wheels",
     subtitle: "End-to-End E-Commerce & Management Platform",
     desc: "A complete Full-Stack solution for a high-volume food business, featuring a customer-facing PWA and a real-time administrative dashboard.",
-    tech: ["React", "Vite", "PWA", "Python", "Django REST", "Google API"],
+    tech: ["Python","Google API", "PWA","React", "Vite", "Django REST", "Google API"],
     link: "https://jahnononweels.netlify.app/",
     type: "Business & E-Commerce",
     featured: true,
@@ -269,6 +269,49 @@ function Modal({ open, onClose, project }) {
             <button onClick={onClose} className="rounded-xl px-3 py-2 text-sm font-bold border border-black/10 dark:border-white/10 hover:scale-[1.03] transition">✕</button>
           </div>
 
+          {/* Notice to Visitors */}
+          {project.caseStudy?.notice && (
+            <div className="mt-6 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-600 dark:text-amber-400 leading-relaxed text-left">
+              <p className="font-bold uppercase tracking-widest mb-1">⚠️ Notice to Visitors</p>
+              {project.caseStudy.notice}
+            </div>
+          )}
+
+          {/* Video Demo (if exists) */}
+          {(project.video || project.hasVideo) && (
+            <div className="mt-6 flex flex-col gap-2">
+              <p className="text-[10px] font-black uppercase tracking-widest opacity-50 text-left">
+                Live Demo
+              </p>
+              {project.video && (
+                <div className="overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-black/5">
+                  <video
+                    src={project.video}
+                    controls
+                    className="w-full aspect-video outline-none"
+                    poster={project.image}
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              )}
+
+              {/* Video Placeholder Content */}
+              {project.hasVideo && !project.video && (
+                <div className="w-full aspect-video rounded-2xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 flex flex-col items-center justify-center overflow-hidden relative group cursor-pointer">
+                  {/* Visual pulse effect for the placeholder */}
+                  <div className="absolute inset-0 bg-sky-500/5 group-hover:bg-sky-500/10 transition-colors duration-500" />
+                  <div className="relative z-10 flex flex-col items-center gap-3">
+                    <div className="w-16 h-16 rounded-full bg-white dark:bg-black/50 border border-black/10 dark:border-white/10 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-sky-500/20 transition-all duration-300">
+                      <span className="text-2xl opacity-60 ml-1">▶</span>
+                    </div>
+                    <p className="text-sm font-bold opacity-70">Screen recording coming soon...</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Case Study Content */}
           {project.caseStudy && (
             <div className="mt-6 space-y-5 text-left">
@@ -306,14 +349,6 @@ function Modal({ open, onClose, project }) {
                   </ul>
                 </div>
               )}
-
-              {/* Notice to Visitors */}
-              {project.caseStudy.notice && (
-                <div className="mt-6 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-600 dark:text-amber-400 leading-relaxed">
-                  <p className="font-bold uppercase tracking-widest mb-1">⚠️ Notice to Visitors</p>
-                  {project.caseStudy.notice}
-                </div>
-              )}
             </div>
           )}
 
@@ -339,39 +374,11 @@ function Modal({ open, onClose, project }) {
             {project.tech?.map((t) => (<Chip key={t}>{t}</Chip>))}
           </div>
 
-          {/* Action Buttons & Video (The Updated Section) */}
+          {/* Action Buttons */}
           <div className="mt-8 pt-6 border-t border-black/5 dark:border-white/5 flex flex-col gap-4">
             <p className="text-[10px] font-black uppercase tracking-widest opacity-50 text-left">
-              {project.video || project.hasVideo ? "Live Demo" : "Source Code"}
+              Links & Actions
             </p>
-
-            {/* Video Demo (if exists) */}
-            {project.video && (
-              <div className="mb-2 overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-black/5">
-                <video
-                  src={project.video}
-                  controls
-                  className="w-full aspect-video outline-none"
-                  poster={project.image}
-                >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            )}
-
-            {/* Video Placeholder Content */}
-            {project.hasVideo && !project.video && (
-              <div className="mb-2 w-full aspect-video rounded-2xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 flex flex-col items-center justify-center overflow-hidden relative group cursor-pointer">
-                {/* Visual pulse effect for the placeholder */}
-                <div className="absolute inset-0 bg-sky-500/5 group-hover:bg-sky-500/10 transition-colors duration-500" />
-                <div className="relative z-10 flex flex-col items-center gap-3">
-                  <div className="w-16 h-16 rounded-full bg-white dark:bg-black/50 border border-black/10 dark:border-white/10 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-sky-500/20 transition-all duration-300">
-                    <span className="text-2xl opacity-60 ml-1">▶</span>
-                  </div>
-                  <p className="text-sm font-bold opacity-70">Screen recording coming soon...</p>
-                </div>
-              </div>
-            )}
 
             <div className="flex flex-wrap gap-3">
               {/* Frontend Link */}
