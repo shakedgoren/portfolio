@@ -7,7 +7,7 @@ const projects = [
     subtitle: "End-to-End E-Commerce & Management Platform",
     desc: "A complete Full-Stack solution for a high-volume food business, featuring a customer-facing PWA and a real-time administrative dashboard.",
     tech: ["Python","Google API", "PWA","React", "Vite", "Django REST", "Google API"],
-    link: "https://jahnononweels.netlify.app/",
+    link: "https://jahnonnweels.netlify.app/",
     type: "Business & E-Commerce",
     featured: true,
     restricted: true,
