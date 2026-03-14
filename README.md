@@ -46,6 +46,6 @@ To run this portfolio locally on your machine:
 ---
 
 ### 📩 Contact
-Feel free to reach out to me via [LinkedIn](www.linkedin.com/in/shakedgoren) or check out the rest of my repositories here on GitHub!
+Feel free to reach out to me via [LinkedIn](https://www.linkedin.com/in/shakedgoren) or check out the rest of my repositories here on GitHub!
 
 *Designed and Developed by [Shaked Liloz](https://github.com/shakedgoren)*
