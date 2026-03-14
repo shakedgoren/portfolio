@@ -40,10 +40,10 @@ const projects = [
     },
   },
   {
-    name: "Library Front Redux",
-    desc: "Frontend library management system using Redux for state management.",
-    tech: ["React", "Redux", "JavaScript"],
-    highlights: ["Global state", "CRUD flows", "Reusable components"],
+    name: "Library Management System",
+    desc: "A Full-Stack library management system with a React frontend and Python/Django backend.",
+    tech: ["React", "Redux", "Python", "Django", "JavaScript"],
+    highlights: ["Global state", "REST API", "CRUD flows", "Authentication"],
     link: "https://library-frontend-final.netlify.app/",
     githubFront: "https://github.com/shakedgoren/Library_front_redux",
     githubBack: "https://github.com/shakedgoren/library-backend-final",
@@ -51,9 +51,9 @@ const projects = [
     featured: true,
     loginCredentials: { username: "shaked_admin", password: "12345678" },
     caseStudy: {
-      problem: "Manage books and users with clear UI and consistent state.",
-      solution: "Built a React app with Redux slices, reusable components and CRUD flows.",
-      learnings: ["Redux patterns", "Component reuse", "UI state consistency"],
+      problem: "Manage books and users with clear UI, consistent state, and a secure backend.",
+      solution: "Built a React app with Redux for state management, powered by a Python Django REST API backend.",
+      learnings: ["Full-Stack Integration", "Django REST Framework", "Redux patterns"],
     },
   },
 ];
