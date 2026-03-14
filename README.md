@@ -4,7 +4,7 @@ Welcome to my personal web portfolio repository! This project serves as the inte
 
 ## 🔗 Live Website
 - **Live Demo:** [Click Here to Visit](#)  
-*(Insert your actual portfolio link here if hosted externally)*
+*[(https://shakedlilozportfolio.netlify.app/)]*
 
 ## 🛠 Tech Stack
 This portfolio was built with modern performance and fluid design in mind:
