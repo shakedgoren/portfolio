@@ -8,6 +8,8 @@ const projects = [
     desc: "A complete Full-Stack solution for a high-volume food business, featuring a customer-facing PWA and a real-time administrative dashboard.",
     tech: ["Python","Google API", "PWA","React", "Vite", "Django REST", "Google API"],
     link: "https://jahnonnweels.netlify.app/",
+    githubFront: "https://github.com/shakedgoren/Order_management_front_demo.git",
+    githubBack: "https://github.com/shakedgoren/Order_management_back_demo.git",
     type: "Business & E-Commerce",
     featured: true,
     restricted: true,
