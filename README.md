@@ -1,16 +1,52 @@
-# React + Vite
+# Shaked Goren - Personal Web Portfolio 💻✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal web portfolio repository! This project serves as the interactive resume and central hub for showcasing my Full-stack development projects, technical skills, and professional experience.
 
-Currently, two official plugins are available:
+## 🔗 Live Website
+- **Live Demo:** [Click Here to Visit](#)  
+*(Insert your actual portfolio link here if hosted externally)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
+This portfolio was built with modern performance and fluid design in mind:
+- **Framework:** React 19, Vite
+- **Styling:** Tailwind CSS (v3.4.x)
+- **Tooling:** ESLint, PostCSS
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🏗 Key Features
 
-## Expanding the ESLint configuration
+### 1. Modern React 19 Architecture
+Built on the absolute latest version of React (v19.2), leveraging the newest features for efficient state management and component rendering.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 2. Lightning-Fast Tooling (Vite)
+Bootstrapped with Vite to guarantee near-instant Hot Module Replacement (HMR) during development and a highly optimized, minified bundle for production deployments.
+
+### 3. Responsive & Sleek Design (Tailwind CSS)
+The entire User Interface is constructed using Tailwind CSS, ensuring a fully mobile-responsive, accessible, and performant design without the overhead of heavy CSS frameworks.
+
+### 4. Interactive Project Showcases
+Dynamically highlights my recent sophisticated applications, such as the full-stack *Jahnon On Wheels* logistics system and the *Library Management System*. 
+
+---
+
+## ⚙️ Running Locally
+To run this portfolio locally on your machine:
+
+1. Clone the repository.
+2. Install the necessary dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the Vite development server:
+   ```bash
+   npm run dev
+   ```
+4. Open your browser and navigate to `http://localhost:5173`.
+
+---
+
+### 📩 Contact
+Feel free to reach out to me via [LinkedIn](#) or check out the rest of my repositories here on GitHub!
+
+*Designed and Developed by [Shaked Goren](https://github.com/shakedgoren)*
