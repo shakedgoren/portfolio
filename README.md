@@ -3,7 +3,7 @@
 Welcome to my personal web portfolio repository! This project serves as the interactive resume and central hub for showcasing my Full-stack development projects, technical skills, and professional experience.
 
 ## 🔗 Live Website
-- **Live Demo:** [Click Here to Visit](#https://shakedlilozportfolio.netlify.app/)  
+- **Live Demo:** [Click Here to Visit](https://shakedlilozportfolio.netlify.app/)  
 
 ## 🛠 Tech Stack
 This portfolio was built with modern performance and fluid design in mind:
